@@ -1,10 +1,13 @@
 package com.example.chalngeforcrime
 
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 import java.util.*
 
 
+@Entity
 data class Student(
-    val id: UUID = UUID.randomUUID(),
+    @PrimaryKey(autoGenerate = true) val id:Int,
     var number: Int = 0,
     var name: String = "",
     var passed: Boolean = false

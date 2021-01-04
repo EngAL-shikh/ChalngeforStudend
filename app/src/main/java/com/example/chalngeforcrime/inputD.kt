@@ -23,7 +23,8 @@ class inputD:DialogFragment() {
         return  AlertDialog.Builder(requireContext(),R.style.ThemeOverlay_AppCompat_Dialog_Alert)
             .setView(v)
             .setPositiveButton("ADD"){dialog,_->
-                val s=Student(UUID.randomUUID(),num.text.toString().toInt(),name.text.toString(),pass.isChecked)
+                val s=Student(0,num.text.toString().toInt(),
+                    name.text.toString(),pass.isChecked)
                 targetFragment.let {fragment ->
                     (fragment as Callbacks).addnewstudent(s)
                 }
